@@ -109,6 +109,71 @@ footer .wrap a:last-child{margin-left:auto}
 body.go .rise{animation-play-state:running}
 .rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}.rise:nth-child(4){animation-delay:.24s}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.avail i{animation:pu 2.2s infinite}@keyframes pu{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac) 60%,transparent)}70%,100%{box-shadow:0 0 0 10px transparent}}
+#pgb{position:fixed;top:0;left:0;right:0;height:2px;background:var(--ac);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+nav a.l{position:relative}nav a.l::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .3s}nav a.l:hover::after,nav a.l.on::after{transform:scaleX(1)}
+.hero{overflow:hidden}.hero::before{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-80px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--ac) 14%,transparent),transparent);animation:dr2 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes dr2{to{transform:translate(-90px,70px) scale(1.15)}}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.tl li.in::before{animation:pop .7s}@keyframes pop{40%{transform:scale(2.2)}}
+.ab-lead{font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.5;max-width:34em;margin-bottom:40px;letter-spacing:-.01em}
+.ab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ab-card,.sk-card{position:relative;overflow:hidden;border:1px solid var(--bd);border-radius:16px;background:var(--s1);padding:26px;box-shadow:var(--sh);transition:transform .3s,border-color .3s}
+.ab-card:hover,.sk-card:hover{transform:translateY(-4px);border-color:var(--ac)}
+.ab-card::after,.sk-card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--ac) 16%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.ab-card:hover::after,.sk-card:hover::after{opacity:1}
+.ab-card span{color:var(--ac)}.ab-card h3{font-size:1.2rem;letter-spacing:-.02em;margin:10px 0 8px}.ab-card p{color:var(--tx2);font-size:.96rem}
+.ab-open{margin:36px 0 28px;max-width:62ch;color:var(--tx2)}.ab-open strong{color:var(--tx)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.stat{padding:24px;border-right:1px solid var(--bd);background:var(--s1)}.stat:last-child{border:0}
+.stat b{display:block;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:-.04em;color:var(--ac);line-height:1.1}.stat span{color:var(--tx2);font-size:.9rem}
+.edu{color:var(--tx2);margin-top:16px}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sk-n{color:var(--ac)}.sk-card h3{font-size:1.15rem;letter-spacing:-.02em;margin:8px 0 14px}
+.sk-chips{display:flex;flex-wrap:wrap;gap:7px}.sk-chips span{border:1px solid var(--bd);background:var(--s2);border-radius:99px;padding:4px 12px;font-size:.85rem;transition:all .2s;cursor:default}
+.sk-chips span:hover{background:var(--ac);color:var(--acx);border-color:var(--ac);transform:translateY(-2px)}
+.marq{overflow:hidden;margin-top:44px;border-block:1px solid var(--bd);padding:16px 0;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq{display:flex;gap:44px;width:max-content;animation:mq 36s linear infinite}.marq:hover .mq{animation-play-state:paused}
+.mq span{font:800 clamp(1.3rem,3vw,2rem)/1 Manrope,sans-serif;letter-spacing:-.03em;color:var(--tx2);white-space:nowrap}.mq span:nth-child(3n){color:var(--ac)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.bg{display:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--bd);background:var(--s1);cursor:pointer;place-content:center;gap:5px}
+.bg span{display:block;width:16px;height:2px;background:var(--tx);transition:transform .3s}
+.bg[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}.bg[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.mp{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--bd);max-height:0;opacity:0;overflow:hidden;visibility:hidden;transition:max-height .4s,opacity .3s,visibility .4s}
+.mp.open{max-height:85vh;opacity:1;visibility:visible}
+.mp a{display:block;padding:16px 24px;font-size:1.3rem;font-weight:700;letter-spacing:-.02em;text-decoration:none;border-top:1px solid var(--bd)}.mp a:hover{color:var(--ac)}
+.mp.open a{animation:rise .45s both}.mp.open a:nth-child(2){animation-delay:.04s}.mp.open a:nth-child(3){animation-delay:.08s}.mp.open a:nth-child(4){animation-delay:.12s}.mp.open a:nth-child(5){animation-delay:.16s}.mp.open a:nth-child(6){animation-delay:.2s}.mp.open a:nth-child(7){animation-delay:.24s}
+body.mlock{overflow:hidden}
+@media(max-width:760px){.ab-grid,.sk-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--bd)}.bg{display:grid}.mp{display:block}}
+.xintro{color:var(--tx2);max-width:52ch;margin:-14px 0 30px}
+.xf{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:38px}
+.xchip{border:1px solid var(--bd);background:transparent;color:var(--tx2);padding:8px 16px;border-radius:99px;cursor:pointer;font:500 .88rem Manrope,sans-serif;transition:all .2s}
+.xchip b{font-weight:500;opacity:.6;margin-left:8px}.xchip:hover{border-color:var(--ac);color:var(--tx)}
+.xchip[aria-pressed="true"]{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+.xl{list-style:none;padding:0}
+.xp{display:grid;grid-template-columns:170px 22px 1fr;gap:0 22px;padding-bottom:26px}
+.xp[hidden]{display:none}
+.xd{text-align:right;padding-top:2px}
+.xd b{display:block;font-size:1.7rem;letter-spacing:-.04em;line-height:1.15}
+.xd span{display:block;color:var(--tx2);font-size:.74rem}.xd .dim{opacity:.7}
+.xr{position:relative}
+.xr::before{content:"";position:absolute;left:50%;top:14px;bottom:-26px;width:1px;background:var(--bd)}
+.xp:last-child .xr::before{display:none}
+.xr::after{content:"";position:absolute;left:50%;top:9px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:var(--bg);border:2px solid var(--ac);transition:transform .3s}
+.xp.now .xr::after{background:var(--ac);animation:pu 2.2s infinite}
+.xp:hover .xr::after{transform:scale(1.5)}
+.xc{border:1px solid var(--bd);border-radius:16px;background:var(--s1);padding:24px 26px;box-shadow:var(--sh);transition:transform .3s,border-color .3s}
+.xc:hover{transform:translateX(6px);border-color:var(--ac)}
+.xp.now .xc{border-color:var(--ac);background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 10%,var(--s1)),var(--s1))}
+.xh{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.xh h3{font-size:1.2rem;letter-spacing:-.02em;line-height:1.25}
+.xt{border:1px solid var(--ac);color:var(--ac);border-radius:99px;padding:1px 11px;font-size:.72rem;white-space:nowrap}
+.xo{color:var(--tx2);margin:4px 0 12px}
+.xdsc{color:var(--tx2);max-width:70ch;font-size:.97rem}
+.xtk{margin-top:12px;font-size:.93rem;max-width:70ch}
+.xtk em{font:500 .7rem "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--ac);margin-right:10px;font-style:normal}
+.xc .sk-chips{margin-top:14px}
+@media(max-width:760px){.xp{grid-template-columns:20px 1fr;gap:0 14px}.xd{grid-column:2;grid-row:1;text-align:left;display:flex;flex-wrap:wrap;gap:2px 12px;align-items:baseline;padding-bottom:8px}.xd b{font-size:1.3rem}.xr{grid-column:1;grid-row:1/3}.xc{grid-column:2;grid-row:2;padding:20px}.xc:hover{transform:none}}
 @media(max-width:760px){body{font-size:16px}.grid2,.pg{grid-template-columns:1fr;gap:28px}.pg{gap:16px}nav a.l{display:none}.certs{columns:1}.certs li{flex-direction:column;gap:0}details dl{grid-template-columns:1fr;gap:2px}details dd{margin-bottom:10px}.hero canvas{height:180px}.wr{margin-bottom:100px}.note{left:24px;right:auto}section{padding:64px 0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}#intro{display:none}}
 </style>
@@ -122,11 +187,13 @@ body.go .rise{animation-play-state:running}
 <button id="sk">Skip intro</button>
 </div>
 
+<div id="pgb"></div>
 <header><div class="wrap"><nav aria-label="Main">
 <a class="logo" href="#top">Michael Adedayo</a>
-<a class="l" href="#about">About</a><a class="l" href="#work">Work</a><a class="l" href="#experience">Experience</a><a class="l" href="#skills">Skills</a><a class="l" href="#resume">Résumé</a><a class="l" href="#contact">Contact</a>
+<a class="l" href="#about">About</a><a class="l" href="#work">Work</a><a class="l" href="#experience">Experience</a><a class="l" href="#skills">Skills</a><a class="l" href="#writing">Writing</a><a class="l" href="#resume">Résumé</a><a class="l" href="#contact">Contact</a>
 <button class="tg" id="tg" aria-label="Switch colour theme" title="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
-</nav></div></header>
+<button class="bg" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="mp"><span></span><span></span></button></nav></div>
+<div id="mp" class="mp"><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#writing">Writing</a><a href="#resume">Résumé</a><a href="#contact">Contact</a></div></header>
 
 <main id="top">
 <div class="hero">
@@ -142,14 +209,22 @@ body.go .rise{animation-play-state:running}
 <span class="note mono">Illustrative simulated volatility series, not real market data</span>
 </div>
 
-<section id="about"><div class="wrap grid2 about">
-<div><h2>Understand the problem first, then pick the tool.</h2>
-<p>Michael Iseoluwa Adedayo is a recent First-Class Computer Science graduate passionate about transforming data into meaningful insights that drive smarter decisions.</p>
-<p>With experience in Data Analytics, Python, Machine Learning, SQL, Excel, Power BI, and technical documentation, he enjoys solving problems with data and building practical, insight-driven solutions. His internships and hands-on analytics projects have strengthened his analytical thinking, attention to detail, and ability to communicate complex findings clearly.</p>
-<p>His interests span Data Analytics, Artificial Intelligence, Machine Learning, and Business Intelligence, with a strong commitment to continuous learning and building solutions that create real-world impact.</p>
-<p>Beyond technology, Michael has demonstrated a strong commitment to leadership, serving as General Secretary of the Nigeria Association of Computing Students (NACOS) and the Students’ Representative Council (SRC), Crawford University Chapter. These experiences have shaped his collaborative mindset and passion for creating impact.</p>
-<p>Always open to connecting with professionals, innovators, and organizations passionate about data, AI, and technology. Let’s connect and build solutions that make a difference.</p></div>
-<dl class="facts"><dt class="mono">Education</dt><dd>B.Sc. Computer and Mathematical Sciences, Crawford University, 2022–2026</dd><dt class="mono">Result</dt><dd>First Class Honours, CGPA 4.82/5.00</dd><dt class="mono">Looking for</dt><dd>Graduate intern or trainee, data analyst, data scientist and ML engineer roles</dd><dt class="mono">Based in</dt><dd>Lagos, Nigeria</dd></dl>
+<section id="about"><div class="wrap">
+<h2>Understand the problem first, then pick the tool.</h2>
+<p class="ab-lead">Michael Iseoluwa Adedayo is a recent First-Class Computer Science graduate who turns data into meaningful insights that drive smarter decisions.</p>
+<div class="ab-grid">
+<div class="ab-card"><span class="mono">01 / What I do</span><h3>Solve problems with data</h3><p>Data Analytics, Python, Machine Learning, SQL, Excel, Power BI and technical documentation. My internships and hands-on projects sharpened my analytical thinking, attention to detail and ability to explain complex findings clearly.</p></div>
+<div class="ab-card"><span class="mono">02 / What pulls me in</span><h3>Data, AI and decisions</h3><p>Data Analytics, Artificial Intelligence, Machine Learning and Business Intelligence, with a strong commitment to continuous learning and to building solutions that create real-world impact.</p></div>
+<div class="ab-card"><span class="mono">03 / How I lead</span><h3>Organised and collaborative</h3><p>General Secretary of the Nigeria Association of Computing Students (NACOS) and of the Students’ Representative Council (SRC), Crawford University Chapter. Both shaped my collaborative mindset and my passion for creating impact.</p></div>
+</div>
+<p class="ab-open">Always open to connecting with professionals, innovators and organisations passionate about data, AI and technology. <strong>Let’s connect and build solutions that make a difference.</strong></p>
+<div class="stats">
+<div class="stat"><b data-n="4.82" data-d="2">4.82</b><span>CGPA out of 5.00, First Class</span></div>
+<div class="stat"><b data-n="12">12</b><span>roles, internships and leadership posts</span></div>
+<div class="stat"><b data-n="7">7</b><span>projects on GitHub</span></div>
+<div class="stat"><b data-n="8">8</b><span>professional certifications</span></div>
+</div>
+<p class="edu mono">B.Sc. Computer and Mathematical Sciences · Crawford University · 2022–2026 · Lagos, Nigeria</p>
 </div></section>
 
 <section id="work"><div class="wrap">
@@ -213,30 +288,17 @@ body.go .rise{animation-play-state:running}
 </div></div></section>
 
 <section id="experience"><div class="wrap">
-<h2>Experience and leadership.</h2>
-<ol class="tl">
-<li><h3>Business Development and Data Research Associate</h3><p class="org mono">KarinKapo Advisory · Current</p><p class="d">Analysed webinar data to produce actionable recommendations and insights.</p></li>
-<li><h3>Data Analytics Job Simulation</h3><p class="org mono">Deloitte Australia via Forage · Virtual · Jun 2026</p><p class="d">Cleaned and analysed business data in Excel, SQL and Tableau, built dashboards of operational and customer KPIs, and turned findings into executive-facing recommendations.</p></li>
-<li><h3>Campus Ambassador</h3><p class="org mono">Ecobank Nigeria · Feb 2025 – Jun 2026 · Lagos, hybrid</p><p class="d">Promoted Ecobank’s student products, organised campaigns and gathered feedback from the campus community. Built public speaking, outreach and communication skills.</p></li>
-<li><h3>Campus Ambassador</h3><p class="org mono">Cleva (YC W24) · Part-time · Aug 2025 – May 2026 · Remote</p><p class="d">Raised awareness of Cleva’s cross-border payments service for Africans, gathered user feedback and built engagement through content and peer conversations, working with the ambassador team on campaigns.</p></li>
-<li><h3>Data Analysis Internship Trainee</h3><p class="org mono">HNG Tech · Internship · Oct 2025 – Dec 2025 · Remote</p><p class="d">Worked on live analytics tasks covering data cleaning, exploration, visualisation and storytelling with Python, SQL, Excel and Power BI, in a sprint-based team.</p></li>
-<li><h3>Registrar, Technology and Operations Intern</h3><p class="org mono">CityCode Mortgage Bank · Internship · Jun 2025 – Dec 2025 · Ibadan, on-site</p><p class="d">Worked in the Registrar and Operations unit of a licensed stockbroking and financial services firm: managing client records, supporting document verification and operational reporting, and handling sensitive data with accuracy. Also built Power BI dashboards and Excel KPI trackers, produced Excel reports, supported internal audits and flagged process improvements.</p></li>
-<li><h3>Data Science and Analytics Intern</h3><p class="org mono">Future Interns · Internship · Aug 2025 – Oct 2025 · Remote</p><p class="d">Extracted insights from datasets, built data-driven reports and applied statistical tools, with weekly mentor reviews.</p></li>
-<li><h3>Email Campaign Management Intern</h3><p class="org mono">GAOTek Inc. · Internship · Jul 2025 – Aug 2025 · Remote</p><p class="d">Supported planning and execution of email campaigns for global audiences: drafting content, segmenting mailing lists and tracking campaign performance.</p></li>
-<li><h3>Campus Ambassador</h3><p class="org mono">Cowrywise · Oct 2024 – Jul 2025</p><p class="d">Created awareness of savings, investing and digital finance on campus, hosted events and drove adoption of the platform among students.</p></li>
-<li><h3>Internship Trainee</h3><p class="org mono">Imagine Integrated Systems · Jul 2024 – Sep 2024 · On-site</p><p class="d">Contributed to backend support and documentation, including Python scripting, system testing and technical writing.</p></li>
-<li><h3>General Secretary, Crawford University Chapter</h3><p class="org mono">Students’ Representative Council · 2024 – 2026</p><p class="d">Kept the council’s records and handled communication between the executive and the student body.</p></li>
-<li><h3>General Secretary, Crawford University Chapter</h3><p class="org mono">Nigeria Association of Computing Students (NACOS) · Oct 2023 – Jul 2024</p><p class="d">Coordinated meetings, documented policies and kept the executive and members connected. Built technical writing, time management and leadership skills.</p></li>
-</ol></div></section>
+<h2>Where I’ve worked, helped and led.</h2>
+<p class="xintro">Banks, fintechs, an advisory startup and a student union. Different rooms, same habit: get the facts straight, then explain them clearly.</p>
+<div class="xf" role="group" aria-label="Filter experience"><button class="xchip" data-x="all" aria-pressed="true">All<b>12</b></button><button class="xchip" data-x="work" aria-pressed="false">Work &amp; internships<b>7</b></button><button class="xchip" data-x="amb" aria-pressed="false">Ambassador<b>3</b></button><button class="xchip" data-x="lead" aria-pressed="false">Leadership<b>2</b></button></div>
+<ol class="xl"><li class="xp now" data-k="work"><div class="xd"><b>Now</b><span class="mono">Current</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Business Development and Data Research Associate</h3><span class="xt mono">Now · Role</span></div><p class="xo mono">KarinKapo Advisory</p><p class="xdsc">I work across business development and data research. One piece of that: analysing webinar data to pull out recommendations and insights people can act on.</p><p class="xtk"><em>Took away</em>Turning webinar data into clear next steps.</p><div class="sk-chips"><span>Data research</span><span>Business development</span><span>Insights</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2026</b><span class="mono">Jun 2026</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Data Analytics Job Simulation</h3><span class="xt mono">Simulation</span></div><p class="xo mono">Deloitte Australia · via Forage · Virtual</p><p class="xdsc">Cleaned, transformed and analysed business datasets in Excel, SQL and Tableau to find trends, anomalies and performance drivers, then built dashboards of operational and customer KPIs.</p><p class="xtk"><em>Took away</em>Data storytelling: turning findings into executive-facing recommendations.</p><div class="sk-chips"><span>Excel</span><span>SQL</span><span>Tableau</span><span>Dashboards</span></div></article></li><li class="xp" data-k="amb"><div class="xd"><b>2025–26</b><span class="mono">Feb 2025 – Jun 2026</span><span class="mono dim">1 yr 5 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Campus Ambassador</h3><span class="xt mono">Ambassador</span></div><p class="xo mono">Ecobank Nigeria · Lagos · Hybrid</p><p class="xdsc">Bridged the gap between students and financial empowerment: promoted Ecobank’s student-friendly products, organised campaigns and gathered insight straight from the campus community.</p><p class="xtk"><em>Took away</em>Public speaking, strategic outreach and personal branding, tied to real student needs.</p><div class="sk-chips"><span>Effective communication</span><span>Brand ambassadorship</span></div></article></li><li class="xp" data-k="amb"><div class="xd"><b>2025–26</b><span class="mono">Aug 2025 – May 2026</span><span class="mono dim">10 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Campus Ambassador</h3><span class="xt mono">Ambassador</span></div><p class="xo mono">Cleva (YC W24) · Remote · Part-time</p><p class="xdsc">Cleva is a YC-backed fintech simplifying cross-border payments for Africans. I raised awareness on campus, promoted its products, collected user feedback and took part in ambassador meetings, campaigns and Slack discussions.</p><p class="xtk"><em>Took away</em>Clear messaging, user-centred thinking and how ambassadors drive impact from the ground up.</p><div class="sk-chips"><span>Brand ambassadorship</span><span>Teamwork</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2025</b><span class="mono">Oct 2025 – Dec 2025</span><span class="mono dim">3 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Data Analysis Internship Trainee</h3><span class="xt mono">Internship</span></div><p class="xo mono">HNG Tech · Remote</p><p class="xdsc">Real analytical work from data cleaning and exploration to visualisation and storytelling, using Python, SQL, Excel and Power BI, on live tasks in sprints with a fast-moving team.</p><p class="xtk"><em>Took away</em>Asking the right questions and presenting insights people can act on.</p><div class="sk-chips"><span>Python</span><span>SQL</span><span>Excel</span><span>Power BI</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2025</b><span class="mono">Jun 2025 – Dec 2025</span><span class="mono dim">7 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Registrar, Technology and Operations Intern</h3><span class="xt mono">Internship</span></div><p class="xo mono">CityCode Mortgage Bank · Ibadan · On-site</p><p class="xdsc">Inside the Registrar and Operations unit of a licensed stockbroking and financial services firm, I managed client records, supported document verification and reporting, and handled sensitive financial data with care. On the technical side I built Power BI dashboards and Excel KPI trackers, supported internal audits and flagged process improvements.</p><p class="xtk"><em>Took away</em>A practical understanding of compliance, operations and data handling in a real financial institution.</p><div class="sk-chips"><span>Data analysis</span><span>Big data</span><span>Power BI</span><span>Excel</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2025</b><span class="mono">Aug 2025 – Oct 2025</span><span class="mono dim">3 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Data Science and Analytics Intern</h3><span class="xt mono">Internship</span></div><p class="xo mono">Future Interns · Remote</p><p class="xdsc">Extracted insights from datasets, built data-driven reports and applied statistical tools, with weekly mentor reviews and knowledge-sharing sessions.</p><p class="xtk"><em>Took away</em>Critical thinking and time management in a fully remote setting.</p><div class="sk-chips"><span>Data analysis</span><span>Data science</span><span>Python</span><span>Excel</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2025</b><span class="mono">Jul 2025 – Aug 2025</span><span class="mono dim">2 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Email Campaign Management Intern</h3><span class="xt mono">Internship</span></div><p class="xo mono">GAOTek Inc. · Remote</p><p class="xdsc">Supported email campaigns for global audiences: drafting content, segmenting mailing lists and tracking performance with analytics tools.</p><p class="xtk"><em>Took away</em>Audience targeting, content strategy and performance analysis.</p><div class="sk-chips"><span>Email marketing</span></div></article></li><li class="xp" data-k="amb"><div class="xd"><b>2024–25</b><span class="mono">Oct 2024 – Jul 2025</span><span class="mono dim">10 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Campus Ambassador</h3><span class="xt mono">Ambassador</span></div><p class="xo mono">Cowrywise · Hybrid</p><p class="xdsc">Created awareness of savings, investing and digital finance on campus, hosted events, led conversations and drove adoption of the platform among students.</p><p class="xtk"><em>Took away</em>Explaining complex financial ideas in simple, relatable ways.</p><div class="sk-chips"><span>CRM</span><span>Teamwork</span></div></article></li><li class="xp" data-k="work"><div class="xd"><b>2024</b><span class="mono">Jul 2024 – Sep 2024</span><span class="mono dim">3 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>Internship Trainee</h3><span class="xt mono">Internship</span></div><p class="xo mono">Imagine Integrated Systems · On-site</p><p class="xdsc">Contributed to backend support and documentation on real tech projects, including Python scripting, system testing and technical writing.</p><p class="xtk"><em>Took away</em>Applying coding knowledge in practice and improving my documentation.</p><div class="sk-chips"><span>Python</span><span>Microsoft Office</span><span>Technical writing</span></div></article></li><li class="xp" data-k="lead"><div class="xd"><b>2024–26</b><span class="mono">2024 – 2026</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>General Secretary</h3><span class="xt mono">Leadership</span></div><p class="xo mono">Students’ Representative Council · Crawford University</p><p class="xdsc">The administrative backbone of the council: kept the records and carried communication between the executive and the student body.</p><p class="xtk"><em>Took away</em>Transparency through organised record management.</p><div class="sk-chips"><span>Documentation</span><span>Communication</span></div></article></li><li class="xp" data-k="lead"><div class="xd"><b>2023–24</b><span class="mono">Oct 2023 – Jul 2024</span><span class="mono dim">10 mos</span></div><div class="xr"></div><article class="xc"><div class="xh"><h3>General Secretary, Crawford University Chapter</h3><span class="xt mono">Leadership</span></div><p class="xo mono">Nigeria Association of Computing Students (NACOS)</p><p class="xdsc">Coordinated meetings, documented policies and kept the executive team and members connected.</p><p class="xtk"><em>Took away</em>Technical writing, time management and leadership under pressure, plus a view into national-level student tech networks.</p><div class="sk-chips"><span>Technical documentation</span><span>Microsoft Office</span></div></article></li></ol>
+</div></section>
 
 <section id="skills"><div class="wrap">
 <h2>Tools I use, grouped by what they’re for.</h2>
-<div class="skills">
-<div><h3>Programming and data</h3><p>Python, SQL, Pandas, NumPy, MySQL, SQLite, ETL, data modelling</p></div>
-<div><h3>Visualisation and BI</h3><p>Power BI, Tableau, Excel (DAX, Power Query, pivot tables, XLOOKUP), Matplotlib, Seaborn</p></div>
-<div><h3>Machine learning</h3><p>Scikit-learn, XGBoost, regression, classification, feature engineering, model evaluation, SHAP</p></div>
-<div><h3>Workflow</h3><p>Git, GitHub, Jupyter, Streamlit, VS Code, technical documentation</p></div>
-</div></div></section>
+<div class="sk-grid"><div class="sk-card"><span class="sk-n mono">01</span><h3>Programming &amp; data</h3><div class="sk-chips"><span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>MySQL</span><span>SQLite</span></div></div><div class="sk-card"><span class="sk-n mono">02</span><h3>Analytics</h3><div class="sk-chips"><span>EDA</span><span>Statistical analysis</span><span>Predictive analytics</span><span>KPI development</span><span>ETL</span><span>Data modelling</span><span>Data warehousing</span></div></div><div class="sk-card"><span class="sk-n mono">03</span><h3>Visualisation &amp; BI</h3><div class="sk-chips"><span>Power BI</span><span>Tableau</span><span>Excel · DAX</span><span>Power Query</span><span>Pivot tables</span><span>XLOOKUP</span><span>Matplotlib</span><span>Seaborn</span></div></div><div class="sk-card"><span class="sk-n mono">04</span><h3>Machine learning</h3><div class="sk-chips"><span>Scikit-learn</span><span>XGBoost</span><span>Regression</span><span>Classification</span><span>Feature engineering</span><span>Model evaluation</span><span>SHAP</span></div></div><div class="sk-card"><span class="sk-n mono">05</span><h3>Workflow &amp; tools</h3><div class="sk-chips"><span>Git</span><span>GitHub</span><span>Jupyter</span><span>Streamlit</span><span>VS Code</span><span>Technical documentation</span></div></div><div class="sk-card"><span class="sk-n mono">06</span><h3>How I work</h3><div class="sk-chips"><span>Analytical thinking</span><span>Critical thinking</span><span>Clear communication</span><span>Leadership</span><span>Stakeholder management</span><span>Attention to detail</span></div></div></div>
+<div class="marq" aria-hidden="true"><div class="mq" id="mq"><span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Excel</span><span>Pandas</span><span>Scikit-learn</span><span>XGBoost</span><span>SHAP</span><span>PyTorch</span><span>Prophet</span><span>ARIMA</span><span>K-Means</span><span>Streamlit</span><span>FastAPI</span><span>Gradio</span><span>Git</span><span>Jupyter</span></div></div>
+</div></section>
 
 <section id="certs"><div class="wrap">
 <h2>Certifications.</h2>
@@ -255,6 +317,8 @@ body.go .rise{animation-play-state:running}
 <div><h2>Résumé.</h2><p style="color:var(--tx2);max-width:46ch">The full résumé covers education, experience, projects and skills. Open it in your browser or save a copy.</p></div>
 <div class="cta" style="margin-top:0"><a class="btn p" href="https://drive.google.com/file/d/1XMepnWGbX389to29JyAyD_EkaeOGOjJ7/view" target="_blank" rel="noopener">View résumé</a><a class="btn" href="https://drive.google.com/uc?export=download&id=1XMepnWGbX389to29JyAyD_EkaeOGOjJ7" target="_blank" rel="noopener">Download PDF</a></div>
 </div></section>
+
+<section id="writing"><div class="wrap grid2"><div><h2>I write about stuff.</h2></div><div><p style="color:var(--tx2);max-width:52ch">Outside the data work, I like writing: about data, technology and whatever I’m learning at the moment. You’ll find it on my Instagram.</p><div class="cta"><a class="btn p" href="https://www.instagram.com/michaels_ade/" target="_blank" rel="noopener">Read on Instagram</a></div></div></div></section>
 
 <section id="contact"><div class="wrap">
 <h2>Let’s talk about data.</h2>
@@ -317,6 +381,21 @@ document.getElementById('cp').onclick=function(){var t=document.getElementById('
 var links=document.querySelectorAll('nav a.l');
 if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
 links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)o.observe(s)})}
+d.classList.add('js');
+var bg=document.getElementById('bg'),mp=document.getElementById('mp');
+function tgm(o){var op=o===undefined?bg.getAttribute('aria-expanded')!=='true':o;bg.setAttribute('aria-expanded',op);bg.setAttribute('aria-label',op?'Close menu':'Open menu');mp.classList.toggle('open',op);B.classList.toggle('mlock',op)}
+bg.onclick=function(){tgm()};mp.querySelectorAll('a').forEach(function(a){a.onclick=function(){tgm(false)}});
+addEventListener('keydown',function(e){if(e.key==='Escape')tgm(false)});
+addEventListener('resize',function(){if(innerWidth>760)tgm(false)});
+var pgb=document.getElementById('pgb');addEventListener('scroll',function(){var h=d.scrollHeight-innerHeight;pgb.style.transform='scaleX('+(h>0?scrollY/h:0)+')'},{passive:true});
+var mq=document.getElementById('mq');if(mq)mq.innerHTML+=mq.innerHTML;
+document.querySelectorAll('.sk-card,.ab-card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+function cnt(el){var n=el.querySelector('b'),to=parseFloat(n.dataset.n),dc=+n.dataset.d||0,s0=performance.now();(function k(){var p=Math.min(1,(performance.now()-s0)/1500),e=1-Math.pow(1-p,3);n.textContent=(to*e).toFixed(dc);if(p<1)requestAnimationFrame(k)})()}
+if(!rm&&'IntersectionObserver' in window){
+var rv=document.querySelectorAll('section h2,.ab-lead,.ab-card,.ab-open,.stat,.proj,.xp,.xintro,.xf,.sk-card,.marq,.certs li,#resume .wrap>*,#writing .wrap>*,#contact .wrap>*,.chips');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');if(t.classList.contains('stat'))cnt(t);io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in');t.style.transitionDelay=''},1300)})},{threshold:.12});
+rv.forEach(function(e){e.classList.add('rv');e.style.transitionDelay=(Array.prototype.indexOf.call(e.parentNode.children,e)%4)*.09+'s';io.observe(e)})}
+var xch=document.querySelectorAll('.xchip');xch.forEach(function(c){c.onclick=function(){xch.forEach(function(x){x.setAttribute('aria-pressed',x===c)});var f=c.dataset.x;document.querySelectorAll('.xp').forEach(function(p){p.hidden=!(f==='all'||p.dataset.k===f)})}});
 // hero series (illustrative)
 var cv=document.getElementById('cv'),cx=cv.getContext('2d'),pts=[],N=140,hv=.3,prog=1;
 for(var i=0;i<N;i++){hv=Math.max(.05,.2+.82*hv+(r()-.5)*.28);pts.push(hv)}
