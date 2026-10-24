@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Adedayo — Data Analytics, Data Science & Machine Learning</title>
-<meta name="description" content="Michael Adedayo is a First Class Computer and Mathematical Sciences graduate from Lagos building data analytics, dashboards and machine-learning projects, including an NGX volatility forecasting system.">
+<meta name="description" content="Michael Iseoluwa Adedayo is a First Class Computer Science graduate in Lagos building data analytics, dashboards and machine-learning projects, including an NGX volatility forecasting system.">
 <meta property="og:title" content="Michael Adedayo — Data Analytics, Data Science & Machine Learning">
 <meta property="og:description" content="Early-career data analyst and ML builder. Projects, experience and résumé.">
 <meta property="og:type" content="website">
@@ -20,10 +20,26 @@ try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-schem
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:100%}
 body{background:var(--bg);color:var(--tx);font:400 17px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .35s,color .35s;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0px)}
+body.lock{overflow:hidden;height:100%}
 a{color:inherit}
 .mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.82rem}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 :focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:4px}
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:#0B0D0F;color:#F2F4F3;overflow:hidden;transition:transform .9s cubic-bezier(.77,0,.18,1)}
+#intro.out{transform:translateY(-100%)}
+#ic{position:absolute;inset:0;width:100%;height:100%}
+#iv{position:absolute;left:0;top:64%;width:100%;height:26vh;transform:translateY(-50%);filter:drop-shadow(0 0 8px #C6F24E)}
+#iv path{fill:none;stroke:#C6F24E;stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-dasharray:4000;stroke-dashoffset:4000;animation:dr 2.6s 2.2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+#it{position:absolute;left:0;right:0;top:38%;text-align:center;padding:0 20px}
+#in{font:800 clamp(1.9rem,6.6vw,4.8rem)/1.05 Manrope,sans-serif;letter-spacing:-.04em;min-height:1.1em}
+#is{font-family:"JetBrains Mono",monospace;color:#C6F24E;margin-top:18px;opacity:0;transform:translateY(10px);transition:all .8s;font-size:clamp(.7rem,2vw,.95rem);letter-spacing:.08em}
+#is.show{opacity:1;transform:none}
+#ib{position:absolute;left:50%;bottom:calc(7vh + env(safe-area-inset-bottom,0px));width:min(260px,70vw);transform:translateX(-50%);font:.78rem "JetBrains Mono",monospace;color:#A0AAA8}
+#ib div{height:2px;background:#252B2F;margin-top:8px}#ib i{display:block;height:100%;width:0;background:#C6F24E}
+#sk{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:20px;background:none;border:1px solid #252B2F;color:#A0AAA8;border-radius:99px;padding:7px 16px;font:.78rem "JetBrains Mono",monospace;cursor:pointer}
+#sk:hover{color:#C6F24E;border-color:#C6F24E}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);padding-top:env(safe-area-inset-top,0px)}
 nav{display:flex;align-items:center;gap:20px;height:64px}
 .logo{font-weight:800;text-decoration:none;letter-spacing:-.02em;margin-right:auto}
@@ -31,7 +47,7 @@ nav a.l{color:var(--tx2);text-decoration:none;font-size:.9rem;font-weight:500}
 nav a.l:hover,nav a.l.on{color:var(--tx)}
 .tg{width:40px;height:40px;border-radius:50%;border:1px solid var(--bd);background:var(--s1);color:var(--tx);cursor:pointer;display:grid;place-items:center;transition:transform .4s}
 .tg:hover{transform:rotate(25deg)}
-.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--bd);background:transparent;color:var(--tx);cursor:pointer;font-family:inherit;transition:transform .2s,background .2s}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--bd);background:transparent;color:var(--tx);cursor:pointer;font-family:inherit;transition:transform .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn.p{background:var(--ac);color:var(--acx);border-color:var(--ac)}
 .hero{padding:clamp(48px,9vw,110px) 0 56px;position:relative}
@@ -40,43 +56,44 @@ nav a.l:hover,nav a.l.on{color:var(--tx)}
 .avail{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--bd);background:var(--s1);border-radius:99px;padding:6px 14px;color:var(--tx2)}
 .avail i{width:8px;height:8px;border-radius:50%;background:var(--ac);display:inline-block}
 h1{font-size:clamp(2.7rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:26px 0 24px;max-width:13ch}
-.hero p.lead{max-width:54ch;color:var(--tx2);font-size:1.12rem}
+.lead{max-width:54ch;color:var(--tx2);font-size:1.12rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 22px}
-.links{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:150px}
-.links a{color:var(--tx2);text-underline-offset:4px}
-.links a:hover{color:var(--ac)}
+.links{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:12px}
+.links a{color:var(--tx2);text-underline-offset:4px}.links a:hover{color:var(--ac)}
+.wr{color:var(--tx2);margin-bottom:150px;max-width:60ch}
 .note{color:var(--tx2);font-size:.75rem;position:absolute;right:24px;bottom:10px;z-index:1}
 section{padding:88px 0;border-top:1px solid var(--bd)}
 h2{font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.035em;line-height:1.08;margin-bottom:34px;max-width:20ch}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.about p+p{margin-top:16px}
-.about p{color:var(--tx2);max-width:60ch}
+.about p{color:var(--tx2);max-width:62ch}.about p+p{margin-top:16px}
 .facts{border:1px solid var(--bd);border-radius:14px;background:var(--s1);padding:26px;align-self:start;box-shadow:var(--sh)}
-.facts dt{color:var(--tx2);margin-top:14px}.facts dt:first-child{margin-top:0}
-.facts dd{font-weight:700}
+.facts dt{color:var(--tx2);margin-top:14px}.facts dt:first-child{margin-top:0}.facts dd{font-weight:700}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .chip{border:1px solid var(--bd);background:transparent;color:var(--tx2);padding:8px 16px;border-radius:99px;cursor:pointer;font:500 .88rem Manrope,sans-serif}
 .chip[aria-pressed="true"]{background:var(--ac);color:var(--acx);border-color:var(--ac)}
-.proj{border:1px solid var(--bd);border-radius:16px;background:var(--s1);padding:30px;margin-bottom:18px;box-shadow:var(--sh)}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.proj{border:1px solid var(--bd);border-radius:16px;background:var(--s1);padding:28px;box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.proj:hover{transform:translateY(-3px);border-color:var(--ac)}
 .proj[hidden]{display:none}
-.proj h3{font-size:1.45rem;letter-spacing:-.02em;margin:6px 0 8px}
-.proj.feat{background:var(--s2);padding:clamp(26px,4vw,44px)}
+.proj h3{font-size:1.3rem;letter-spacing:-.02em;margin:6px 0 8px}
+.proj p{color:var(--tx2)}
+.proj.feat{grid-column:1/-1;background:var(--s2);padding:clamp(26px,4vw,44px)}
+.proj.feat:hover{transform:none}
 .proj.feat h3{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1}
-.proj p{color:var(--tx2);max-width:68ch}
+.proj.feat p{max-width:68ch}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
 .tags span{border:1px solid var(--bd);border-radius:6px;padding:2px 9px;color:var(--tx2)}
+.row{margin-top:auto;padding-top:14px}
+.row a{font-weight:700;text-underline-offset:4px;color:var(--ac)}
 details{margin-top:12px;border-top:1px solid var(--bd);padding-top:14px}
 summary{cursor:pointer;font-weight:700;color:var(--ac)}
 details dl{display:grid;grid-template-columns:150px 1fr;gap:12px 24px;margin-top:16px}
 details dt{font-weight:700}details dd{color:var(--tx2)}
-.row{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
-.row a{font-weight:700;text-underline-offset:4px}
 .tl{list-style:none;padding:0;border-left:1px solid var(--bd);margin-left:6px}
-.tl li{padding:0 0 38px 28px;position:relative}
+.tl li{padding:0 0 34px 28px;position:relative}
 .tl li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--ac)}
-.tl h3{font-size:1.2rem}.tl .org{color:var(--tx2)}
-.tl ul{margin:12px 0 0 18px;color:var(--tx2)}.tl li li{padding:0;border:0;margin-bottom:6px}.tl li li::before{display:none}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
+.tl h3{font-size:1.15rem}.tl .org{color:var(--tx2)}.tl p.d{color:var(--tx2);margin-top:8px;max-width:68ch;font-size:.97rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border:1px solid var(--bd);border-radius:14px;overflow:hidden}
 .skills div{padding:24px;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);margin:0 -1px -1px 0;background:var(--s1)}
 .skills h3{font-size:1rem;margin-bottom:8px}.skills p{color:var(--tx2);font-size:.95rem}
 .certs{columns:2;column-gap:40px;list-style:none;padding:0}
@@ -86,19 +103,29 @@ details dt{font-weight:700}details dd{color:var(--tx2)}
 .big:hover{color:var(--ac)}
 footer{border-top:1px solid var(--bd);padding:28px 0 40px;color:var(--tx2);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
-footer .wrap a:first-of-type{margin-left:auto}
+footer .wrap a:last-child{margin-left:auto}
 #toast{margin-left:12px;color:var(--ac)}
-@media(max-width:760px){body{font-size:16px}.grid2{grid-template-columns:1fr;gap:28px}nav a.l{display:none}.certs{columns:1}.certs li{flex-direction:column;gap:0}details dl{grid-template-columns:1fr;gap:2px}details dd{margin-bottom:10px}.hero canvas{height:180px}.links{margin-bottom:100px}.note{left:24px;right:auto}section{padding:64px 0}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
-.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}.rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}.rise:nth-child(4){animation-delay:.24s}
+.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-play-state:paused}
+body.go .rise{animation-play-state:running}
+.rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}.rise:nth-child(4){animation-delay:.24s}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media(max-width:760px){body{font-size:16px}.grid2,.pg{grid-template-columns:1fr;gap:28px}.pg{gap:16px}nav a.l{display:none}.certs{columns:1}.certs li{flex-direction:column;gap:0}details dl{grid-template-columns:1fr;gap:2px}details dd{margin-bottom:10px}.hero canvas{height:180px}.wr{margin-bottom:100px}.note{left:24px;right:auto}section{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}#intro{display:none}}
 </style>
 </head>
-<body>
+<body class="lock">
+<div id="intro" aria-label="Loading introduction">
+<canvas id="ic" aria-hidden="true"></canvas>
+<svg id="iv" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path id="ip2" d=""/></svg>
+<div id="it"><div id="in" aria-live="polite"></div><div id="is">DATA ANALYTICS · DATA SCIENCE · MACHINE LEARNING</div></div>
+<div id="ib"><span id="ipc">0%</span><div><i id="ibar"></i></div></div>
+<button id="sk">Skip intro</button>
+</div>
+
 <header><div class="wrap"><nav aria-label="Main">
 <a class="logo" href="#top">Michael Adedayo</a>
 <a class="l" href="#about">About</a><a class="l" href="#work">Work</a><a class="l" href="#experience">Experience</a><a class="l" href="#skills">Skills</a><a class="l" href="#resume">Résumé</a><a class="l" href="#contact">Contact</a>
-<button class="tg" id="tg" aria-label="Switch colour theme" title="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+<button class="tg" id="tg" aria-label="Switch colour theme" title="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </nav></div></header>
 
 <main id="top">
@@ -107,18 +134,21 @@ footer .wrap a:first-of-type{margin-left:auto}
 <div class="wrap">
 <p class="avail mono rise"><i></i>Open to graduate internship and entry-level roles</p>
 <h1 class="rise">Making sense of data. Building things that matter.</h1>
-<p class="lead rise">I’m Michael, a First Class Computer and Mathematical Sciences graduate in Lagos. I analyse data, build dashboards and train machine-learning models, then explain what the results do and don’t tell us.</p>
+<p class="lead rise">I’m Michael, a First Class Computer Science graduate in Lagos. I analyse data, build dashboards and train machine-learning models, then explain what the results do and don’t tell us.</p>
 <div class="cta rise"><a class="btn p" href="#work">Explore my work</a><a class="btn" href="#resume">View résumé</a><a class="btn" href="#contact">Contact me</a></div>
-<div class="links mono rise"><a href="https://github.com/MichaelAdedayo" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/michaeladedayo27/" target="_blank" rel="noopener">LinkedIn</a></div>
+<div class="links mono rise"><a href="https://github.com/MichaelAdedayo" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/michaeladedayo27/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/michaels_ade/" target="_blank" rel="noopener">Instagram</a></div>
+<p class="wr rise">I also like writing about data, technology and whatever I’m learning at the moment.</p>
 </div>
 <span class="note mono">Illustrative simulated volatility series, not real market data</span>
 </div>
 
 <section id="about"><div class="wrap grid2 about">
 <div><h2>Understand the problem first, then pick the tool.</h2>
-<p>I studied Computer and Mathematical Sciences at Crawford University and finished with First Class Honours, a CGPA of 4.82 out of 5.00. Most of my work since has been about data: cleaning it, questioning it and turning it into something a decision-maker can use.</p>
-<p>At CityCode Mortgage Bank I worked across research, operations and technology, building Power BI dashboards and KPI trackers. My projects range from forecasting stock-market volatility to detecting fraud, and I try to document each one so someone else can follow the reasoning.</p>
-<p>I also served as General Secretary of NACOS and of the Students’ Representative Council, which taught me to keep records straight and communicate clearly with a lot of people.</p></div>
+<p>Michael Iseoluwa Adedayo is a recent First-Class Computer Science graduate passionate about transforming data into meaningful insights that drive smarter decisions.</p>
+<p>With experience in Data Analytics, Python, Machine Learning, SQL, Excel, Power BI, and technical documentation, he enjoys solving problems with data and building practical, insight-driven solutions. His internships and hands-on analytics projects have strengthened his analytical thinking, attention to detail, and ability to communicate complex findings clearly.</p>
+<p>His interests span Data Analytics, Artificial Intelligence, Machine Learning, and Business Intelligence, with a strong commitment to continuous learning and building solutions that create real-world impact.</p>
+<p>Beyond technology, Michael has demonstrated a strong commitment to leadership, serving as General Secretary of the Nigeria Association of Computing Students (NACOS) and the Students’ Representative Council (SRC), Crawford University Chapter. These experiences have shaped his collaborative mindset and passion for creating impact.</p>
+<p>Always open to connecting with professionals, innovators, and organizations passionate about data, AI, and technology. Let’s connect and build solutions that make a difference.</p></div>
 <dl class="facts"><dt class="mono">Education</dt><dd>B.Sc. Computer and Mathematical Sciences, Crawford University, 2022–2026</dd><dt class="mono">Result</dt><dd>First Class Honours, CGPA 4.82/5.00</dd><dt class="mono">Looking for</dt><dd>Graduate intern or trainee, data analyst, data scientist and ML engineer roles</dd><dt class="mono">Based in</dt><dd>Lagos, Nigeria</dd></dl>
 </div></section>
 
@@ -126,11 +156,12 @@ footer .wrap a:first-of-type{margin-left:auto}
 <h2>Projects that ask a real question.</h2>
 <div class="chips" role="group" aria-label="Filter projects">
 <button class="chip" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="ml" aria-pressed="false">Machine learning</button><button class="chip" data-f="analytics" aria-pressed="false">Analytics</button><button class="chip" data-f="app" aria-pressed="false">Applications</button></div>
+<div class="pg">
 
 <article class="proj feat" data-c="ml app">
 <span class="mono" style="color:var(--ac)">Featured · final-year project</span>
 <h3>NGX Volatility Prediction System</h3>
-<p>An end-to-end machine-learning system that forecasts how much Nigerian Exchange stocks swing, rather than trying to predict their price. It uses historical time-series data, compares several models, and explains predictions with SHAP.</p>
+<p>A machine-learning system that predicts volatility for stocks on the Nigerian Exchange, with an interactive analytics dashboard. It forecasts how much stocks swing rather than trying to predict their price, and explains its predictions with SHAP.</p>
 <div class="tags mono"><span>Python</span><span>XGBoost</span><span>Random Forest</span><span>SVR</span><span>SHAP</span><span>Streamlit</span></div>
 <details open><summary>Read the case study</summary><dl>
 <dt>Problem</dt><dd>Investors and analysts need a view of risk, and volatility is a more forecastable quantity than price.</dd>
@@ -143,30 +174,59 @@ footer .wrap a:first-of-type{margin-left:auto}
 <div class="row"><a href="https://github.com/MichaelAdedayo/NGX-Volatility-Prediction-System" target="_blank" rel="noopener">Source on GitHub</a></div>
 </article>
 
+<article class="proj" data-c="ml analytics">
+<span class="mono" style="color:var(--ac)">Time series · risk</span><h3>NGX Forecasting &amp; Anomaly Detection</h3>
+<p>Time-series forecasting with ARIMA and Prophet, plus anomaly detection on the NGX All-Share Index. It extends my undergraduate research on NGX volatility and adds SQL and a Power BI view for risk monitoring.</p>
+<div class="tags mono"><span>ARIMA</span><span>Prophet</span><span>Anomaly detection</span><span>SQL</span><span>Power BI</span></div>
+<div class="row"><a href="https://github.com/MichaelAdedayo/ngx-forecasting-anomaly-detection" target="_blank" rel="noopener">Source on GitHub</a></div></article>
+
 <article class="proj" data-c="ml">
 <span class="mono" style="color:var(--ac)">Machine learning</span><h3>Fraud Detection Model</h3>
-<p>A classification model that flags fraudulent transactions. The hard part is class imbalance: fraud is rare, so accuracy alone is misleading. I compared algorithms on Precision, Recall, F1 and ROC-AUC and looked at which features indicate fraud.</p>
-<div class="tags mono"><span>Python</span><span>Scikit-learn</span><span>Pandas</span></div></article>
+<p>Detects fraudulent credit card transactions in a highly imbalanced dataset where only 0.17% of transactions are fraud. It uses SMOTE and Random Forest, with EDA and a comparison of models judged on Precision, Recall, F1 and ROC-AUC rather than accuracy.</p>
+<div class="tags mono"><span>Python</span><span>Scikit-learn</span><span>SMOTE</span><span>Random Forest</span></div>
+<div class="row"><a href="https://github.com/MichaelAdedayo/fraud-detection-ml" target="_blank" rel="noopener">Source on GitHub</a></div></article>
+
+<article class="proj" data-c="analytics ml">
+<span class="mono" style="color:var(--ac)">Customer analytics</span><h3>Customer Segmentation &amp; CLV</h3>
+<p>Groups customers with RFM analysis and K-Means clustering, then estimates customer lifetime value and churn risk. Results are delivered through SQL queries and a Power BI dashboard.</p>
+<div class="tags mono"><span>RFM</span><span>K-Means</span><span>CLV</span><span>Churn risk</span><span>SQL</span><span>Power BI</span></div>
+<div class="row"><a href="https://github.com/MichaelAdedayo/customer-segmentation-clv" target="_blank" rel="noopener">Source on GitHub</a></div></article>
+
+<article class="proj" data-c="ml app">
+<span class="mono" style="color:var(--ac)">Recommender system</span><h3>Movie Recommender System</h3>
+<p>Collaborative filtering with matrix factorization written from scratch, including cold-start handling. It is evaluated with MAP and NDCG and comes with a FastAPI and HTML demo.</p>
+<div class="tags mono"><span>Collaborative filtering</span><span>Matrix factorization</span><span>MAP / NDCG</span><span>FastAPI</span></div>
+<div class="row"><a href="https://github.com/MichaelAdedayo/movie-recommender-system" target="_blank" rel="noopener">Source on GitHub</a></div></article>
 
 <article class="proj" data-c="ml app">
 <span class="mono" style="color:var(--ac)">Deep learning</span><h3>Speech Recognition (DeepSpeech-Lite)</h3>
-<p>A compact speech-to-text model built in PyTorch, pairing a convolutional network with a bidirectional GRU and CTC loss, with a Gradio interface and Docker packaging.</p>
-<div class="tags mono"><span>PyTorch</span><span>CNN</span><span>BiGRU</span><span>CTC</span><span>Gradio</span><span>Docker</span></div>
+<p>A speech-to-text recognizer built from scratch in PyTorch using a CNN, a bidirectional GRU and CTC loss. It is trained on LibriSpeech and includes a Gradio demo.</p>
+<div class="tags mono"><span>PyTorch</span><span>CNN</span><span>BiGRU</span><span>CTC</span><span>LibriSpeech</span><span>Gradio</span></div>
 <div class="row"><a href="https://github.com/MichaelAdedayo/speech-recognition-pytorch" target="_blank" rel="noopener">Source on GitHub</a></div></article>
 
 <article class="proj" data-c="analytics">
-<span class="mono" style="color:var(--ac)">Analytics</span><h3>Netflix Data Analysis</h3>
-<p>Descriptive analysis of Netflix’s global catalogue covering genre, rating and regional production trends, ending in business recommendations.</p>
-<div class="tags mono"><span>Python</span><span>Pandas</span><span>SQL</span><span>Power BI</span><span>Matplotlib</span></div></article>
-</div></section>
+<span class="mono" style="color:var(--ac)">Business analytics</span><h3>Netflix Data Analysis</h3>
+<p>A business-focused exploratory analysis of Netflix’s content strategy covering growth trends, geographic opportunity, genre analysis and content aging. It uses SQL and Power BI and ends in actionable recommendations.</p>
+<div class="tags mono"><span>Python</span><span>SQL</span><span>Power BI</span><span>EDA</span></div>
+<div class="row"><a href="https://github.com/MichaelAdedayo/netflix-data-analysis" target="_blank" rel="noopener">Source on GitHub</a></div></article>
+
+</div></div></section>
 
 <section id="experience"><div class="wrap">
 <h2>Experience and leadership.</h2>
 <ol class="tl">
-<li><h3>Research, Operations &amp; Technology Intern</h3><p class="org mono">CityCode Mortgage Bank · Jul 2025 – Dec 2025</p><ul><li>Collected, cleaned and analysed operational, financial and customer data for the Research, Operations and Technology units.</li><li>Built Power BI dashboards and automated Excel KPI trackers for management reporting.</li><li>Ran exploratory analysis to find process bottlenecks and gave recommendations to stakeholders.</li></ul></li>
-<li><h3>Data Analytics Job Simulation</h3><p class="org mono">Deloitte Australia via Forage (virtual) · Jun 2026</p><ul><li>Cleaned and analysed business data in Excel, SQL and Tableau, and built dashboards of operational and customer KPIs.</li><li>Turned findings into executive-facing recommendations.</li></ul></li>
-<li><h3>General Secretary</h3><p class="org mono">Students’ Representative Council, Crawford University · 2024 – 2026</p><ul><li>Kept the council’s records and handled communication between the executive and the student body.</li></ul></li>
-<li><h3>General Secretary</h3><p class="org mono">Nigeria Association of Computing Students (NACOS) · 2023 – 2024</p><ul><li>Managed executive documentation and coordinated departmental activities.</li></ul></li>
+<li><h3>Business Development and Data Research Associate</h3><p class="org mono">KarinKapo Advisory · Current</p><p class="d">Analysed webinar data to produce actionable recommendations and insights.</p></li>
+<li><h3>Data Analytics Job Simulation</h3><p class="org mono">Deloitte Australia via Forage · Virtual · Jun 2026</p><p class="d">Cleaned and analysed business data in Excel, SQL and Tableau, built dashboards of operational and customer KPIs, and turned findings into executive-facing recommendations.</p></li>
+<li><h3>Campus Ambassador</h3><p class="org mono">Ecobank Nigeria · Feb 2025 – Jun 2026 · Lagos, hybrid</p><p class="d">Promoted Ecobank’s student products, organised campaigns and gathered feedback from the campus community. Built public speaking, outreach and communication skills.</p></li>
+<li><h3>Campus Ambassador</h3><p class="org mono">Cleva (YC W24) · Part-time · Aug 2025 – May 2026 · Remote</p><p class="d">Raised awareness of Cleva’s cross-border payments service for Africans, gathered user feedback and built engagement through content and peer conversations, working with the ambassador team on campaigns.</p></li>
+<li><h3>Data Analysis Internship Trainee</h3><p class="org mono">HNG Tech · Internship · Oct 2025 – Dec 2025 · Remote</p><p class="d">Worked on live analytics tasks covering data cleaning, exploration, visualisation and storytelling with Python, SQL, Excel and Power BI, in a sprint-based team.</p></li>
+<li><h3>Registrar, Technology and Operations Intern</h3><p class="org mono">CityCode Mortgage Bank · Internship · Jun 2025 – Dec 2025 · Ibadan, on-site</p><p class="d">Worked in the Registrar and Operations unit of a licensed stockbroking and financial services firm: managing client records, supporting document verification and operational reporting, and handling sensitive data with accuracy. Also built Power BI dashboards and Excel KPI trackers, produced Excel reports, supported internal audits and flagged process improvements.</p></li>
+<li><h3>Data Science and Analytics Intern</h3><p class="org mono">Future Interns · Internship · Aug 2025 – Oct 2025 · Remote</p><p class="d">Extracted insights from datasets, built data-driven reports and applied statistical tools, with weekly mentor reviews.</p></li>
+<li><h3>Email Campaign Management Intern</h3><p class="org mono">GAOTek Inc. · Internship · Jul 2025 – Aug 2025 · Remote</p><p class="d">Supported planning and execution of email campaigns for global audiences: drafting content, segmenting mailing lists and tracking campaign performance.</p></li>
+<li><h3>Campus Ambassador</h3><p class="org mono">Cowrywise · Oct 2024 – Jul 2025</p><p class="d">Created awareness of savings, investing and digital finance on campus, hosted events and drove adoption of the platform among students.</p></li>
+<li><h3>Internship Trainee</h3><p class="org mono">Imagine Integrated Systems · Jul 2024 – Sep 2024 · On-site</p><p class="d">Contributed to backend support and documentation, including Python scripting, system testing and technical writing.</p></li>
+<li><h3>General Secretary, Crawford University Chapter</h3><p class="org mono">Students’ Representative Council · 2024 – 2026</p><p class="d">Kept the council’s records and handled communication between the executive and the student body.</p></li>
+<li><h3>General Secretary, Crawford University Chapter</h3><p class="org mono">Nigeria Association of Computing Students (NACOS) · Oct 2023 – Jul 2024</p><p class="d">Coordinated meetings, documented policies and kept the executive and members connected. Built technical writing, time management and leadership skills.</p></li>
 </ol></div></section>
 
 <section id="skills"><div class="wrap">
@@ -192,7 +252,7 @@ footer .wrap a:first-of-type{margin-left:auto}
 </ul></div></section>
 
 <section id="resume"><div class="wrap grid2">
-<div><h2>Résumé.</h2><p style="color:var(--tx2);max-width:46ch">The full one-page résumé covers education, experience, projects and skills. Open it in your browser or save a copy.</p></div>
+<div><h2>Résumé.</h2><p style="color:var(--tx2);max-width:46ch">The full résumé covers education, experience, projects and skills. Open it in your browser or save a copy.</p></div>
 <div class="cta" style="margin-top:0"><a class="btn p" href="https://drive.google.com/file/d/1XMepnWGbX389to29JyAyD_EkaeOGOjJ7/view" target="_blank" rel="noopener">View résumé</a><a class="btn" href="https://drive.google.com/uc?export=download&id=1XMepnWGbX389to29JyAyD_EkaeOGOjJ7" target="_blank" rel="noopener">Download PDF</a></div>
 </div></section>
 
@@ -200,7 +260,7 @@ footer .wrap a:first-of-type{margin-left:auto}
 <h2>Let’s talk about data.</h2>
 <p style="color:var(--tx2);max-width:52ch">I’m happy to talk about analytics, machine learning or a graduate role on your team.</p>
 <a class="big" href="mailto:michaeladedayo.ai@gmail.com">michaeladedayo.ai@gmail.com</a>
-<div class="cta" style="margin-top:0"><button class="btn" id="cp">Copy email</button><a class="btn" href="https://www.linkedin.com/in/michaeladedayo27/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/MichaelAdedayo" target="_blank" rel="noopener">GitHub</a><span id="toast" role="status" class="mono"></span></div>
+<div class="cta" style="margin-top:0"><button class="btn" id="cp">Copy email</button><a class="btn" href="https://www.linkedin.com/in/michaeladedayo27/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/MichaelAdedayo" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.instagram.com/michaels_ade/" target="_blank" rel="noopener">Instagram</a><span id="toast" role="status" class="mono"></span></div>
 </div></section>
 </main>
 
@@ -208,28 +268,64 @@ footer .wrap a:first-of-type{margin-left:auto}
 
 <script>
 (function(){
-var d=document.documentElement;
+var d=document.documentElement,B=document.body;
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sr(){return seedv=(seedv*16807)%2147483647}
+var seedv=7;function r(){return sr()/2147483647}
+/* ---------- intro ---------- */
+var it=document.getElementById('intro'),fin=false,tms=[];
+function done(){if(fin)return;fin=true;tms.forEach(clearTimeout);B.classList.remove('lock');B.classList.add('go');it.classList.add('out');setTimeout(function(){it.remove()},1000)}
+if(rm){it.remove();B.classList.remove('lock');B.classList.add('go')}
+else{
+document.getElementById('sk').onclick=done;
+// volatility path for the intro line
+var v=.3,s='';for(var i=0;i<=100;i++){v=Math.max(.05,.2+.82*v+(r()-.5)*.3);s+=(i?'L':'M')+(i*10)+' '+(190-v*150/1.2).toFixed(1)}
+document.getElementById('ip2').setAttribute('d',s);
+// falling data streams
+var c=document.getElementById('ic'),x=c.getContext('2d'),W,H,cols,drops,ch='01ΣΔμσ%+−→{}[]0123456789NGXRMSEβ∂≈',t0=performance.now(),last=0;
+function size(){var dp=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*dp;c.height=H*dp;x.setTransform(dp,0,0,dp,0,0);x.fillStyle='#0B0D0F';x.fillRect(0,0,W,H);cols=Math.ceil(W/18);drops=[];for(var i=0;i<cols;i++)drops.push(-Math.random()*60)}
+size();addEventListener('resize',size);
+function frame(now){if(fin)return;var t=now-t0;
+if(now-last>38){last=now;x.fillStyle='rgba(11,13,15,.13)';x.fillRect(0,0,W,H);x.font='15px "JetBrains Mono",monospace';
+for(var i=0;i<cols;i++){var y=drops[i]*18;
+x.fillStyle=Math.random()<.04?'#F2F4F3':'#C6F24E';x.globalAlpha=Math.random()*.6+.35;
+if(y>0)x.fillText(ch[Math.floor(Math.random()*ch.length)],i*18,y);
+drops[i]+=1;if(y>H&&t<3200&&Math.random()>.96)drops[i]=0;else if(y>H&&t>=3200)drops[i]=1e6}
+x.globalAlpha=1}
+requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+// name scramble
+var nm='Michael Iseoluwa Adedayo',g='ABCDEFGHJKLMNPQRSTUVWXYZ01#%&',ne=document.getElementById('in');
+function reveal(){var s0=performance.now(),D=1500;(function k(){if(fin)return;var p=(performance.now()-s0)/D,o='';
+for(var i=0;i<nm.length;i++){o+=nm[i]===' '?' ':(p*nm.length*1.15>i?nm[i]:g[Math.floor(Math.random()*g.length)])}
+ne.textContent=o;if(p<1.1)setTimeout(k,40);else ne.textContent=nm})()}
+tms.push(setTimeout(reveal,2600));
+tms.push(setTimeout(function(){document.getElementById('is').classList.add('show')},4400));
+// progress
+var pc=document.getElementById('ipc'),pb=document.getElementById('ibar'),T=6400,ps=performance.now();
+(function pr(){if(fin)return;var p=Math.min(1,(performance.now()-ps)/T),e=1-Math.pow(1-p,2);pc.textContent=Math.round(e*100)+'%';pb.style.width=e*100+'%';if(p<1)requestAnimationFrame(pr)})();
+tms.push(setTimeout(done,6800));
+}
+/* ---------- page ---------- */
 document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('tg').onclick=function(){var n=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}draw()};
-document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){
-document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+var chips=document.querySelectorAll('.chip');
+chips.forEach(function(c){c.onclick=function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
 var f=c.dataset.f;document.querySelectorAll('.proj').forEach(function(p){p.hidden=!(f==='all'||p.dataset.c.split(' ').indexOf(f)>-1)})}});
-document.getElementById('cp').onclick=function(){var t=document.getElementById('toast'),m='michaeladedayo.ai@gmail.com';
-(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(function(){t.textContent='Email copied'},function(){t.textContent='Copy failed. Select the address above instead.'});setTimeout(function(){t.textContent=''},2500)};
-var links=document.querySelectorAll('nav a.l'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
-if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'}).observe&&secs.forEach(function(s,i){if(!s)return;window._o=window._o||new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});window._o.observe(s)})}
-// hero: simulated volatility-clustering series (illustrative only)
-var cv=document.getElementById('cv'),cx=cv.getContext('2d'),pts=[],seed=7;
-function r(){seed=(seed*16807)%2147483647;return seed/2147483647}
-var v=.3,N=140;for(var i=0;i<N;i++){v=.2+.82*v+(r()-.5)*.28;v=Math.max(.05,v);pts.push(v)}
-var prog=1;
+document.getElementById('cp').onclick=function(){var t=document.getElementById('toast');
+(navigator.clipboard?navigator.clipboard.writeText('michaeladedayo.ai@gmail.com'):Promise.reject()).then(function(){t.textContent='Email copied'},function(){t.textContent='Copy failed. Select the address above instead.'});setTimeout(function(){t.textContent=''},2500)};
+var links=document.querySelectorAll('nav a.l');
+if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
+links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)o.observe(s)})}
+// hero series (illustrative)
+var cv=document.getElementById('cv'),cx=cv.getContext('2d'),pts=[],N=140,hv=.3,prog=1;
+for(var i=0;i<N;i++){hv=Math.max(.05,.2+.82*hv+(r()-.5)*.28);pts.push(hv)}
 function draw(){var w=cv.clientWidth,h=cv.clientHeight,dp=devicePixelRatio||1;cv.width=w*dp;cv.height=h*dp;cx.setTransform(dp,0,0,dp,0,0);cx.clearRect(0,0,w,h);
 var st=getComputedStyle(d),ac=st.getPropertyValue('--ac').trim(),bd=st.getPropertyValue('--bd').trim(),mx=Math.max.apply(null,pts),n=Math.floor(N*prog);
 cx.strokeStyle=bd;cx.lineWidth=1;for(var g=1;g<4;g++){cx.beginPath();cx.moveTo(0,h*g/4);cx.lineTo(w,h*g/4);cx.stroke()}
-cx.beginPath();for(var i=0;i<n;i++){var x=i/(N-1)*w,y=h-8-(pts[i]/mx)*(h-30);i?cx.lineTo(x,y):cx.moveTo(x,y)}
+cx.beginPath();for(var i=0;i<n;i++){var X=i/(N-1)*w,Y=h-8-(pts[i]/mx)*(h-30);i?cx.lineTo(X,Y):cx.moveTo(X,Y)}
 cx.strokeStyle=ac;cx.lineWidth=2;cx.lineJoin='round';cx.stroke()}
-var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(rm){draw()}else{prog=0;(function s(){prog+=.012;if(prog>=1){prog=1}draw();if(prog<1)requestAnimationFrame(s)})()}
+if(rm){draw()}else{prog=0;var started=false;(function w8(){if(!B.classList.contains('go')){requestAnimationFrame(w8);return}(function s(){prog=Math.min(1,prog+.012);draw();if(prog<1)requestAnimationFrame(s)})()})()}
 addEventListener('resize',draw);
 })();
 </script>
